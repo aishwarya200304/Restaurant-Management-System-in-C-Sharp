@@ -1,0 +1,52 @@
+﻿<Window x:Class="Lab_3_Question_No_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab_3_Question_No_1"
+        mc:Ignorable="d"
+        Title="Restaurant Bill App" Height="520" Width="800" Background="Black">
+    <Grid Height="491" VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="486*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label Content="    Restaurant Bill App   " HorizontalAlignment="Center" Margin="0,29,0,0" VerticalAlignment="Top" Height="34" Width="186" FontSize="15"   Foreground="Black" Background="LightCoral"  FontFamily="Arial" FontWeight="DemiBold"/>
+        <Label Content=" Category" HorizontalAlignment="Left" Margin="12,170,0,0" VerticalAlignment="Top" Height="28" Width="77"  Foreground="Black" Background="LightGoldenrodYellow"  FontFamily="Arial" FontWeight="DemiBold"/>
+        <Label Content="   Items" HorizontalAlignment="Left" Margin="12,224,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.287,0.591"  Foreground="Black" Background="LightGoldenrodYellow"  FontFamily="Arial" FontWeight="DemiBold" Width="77" Height="28"/>
+        <ComboBox Name ="category" HorizontalAlignment="Left" Margin="137,170,0,0" VerticalAlignment="Top" Width="134" Height="28" SelectionChanged="category_SelectionChanged"/>
+        <ComboBox  Name ="Items" HorizontalAlignment="Left" Margin="137,222,0,0" VerticalAlignment="Top" Width="134" Height="33" SelectionChanged="Items_SelectionChanged"/>
+        <Label Content="    Items Selected " HorizontalAlignment="Center" Margin="0,122,0,0" VerticalAlignment="Top" Width="134"  Foreground="Black" Background="LightGoldenrodYellow"  FontFamily="Arial" FontWeight="DemiBold" Height="24"/>
+        <DataGrid x:Name="CartItemsDataGrid" ItemsSource="{Binding CartItems}" Margin="307,157,283,106" Background="LightGoldenrodYellow">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add To Cart" HorizontalAlignment="Left" Height="56" Margin="10,292,0,0" VerticalAlignment="Top" Width="112" Background="LightCoral" FontFamily="Arial" FontWeight="DemiBold" Click="Button_Click"/>
+        <Label Content="     Payments " HorizontalAlignment="Left" Margin="620,127,0,0" VerticalAlignment="Top" Height="26" Width="104" Background="LightGoldenrodYellow" FontFamily="Arial" FontWeight="DemiBold" RenderTransformOrigin="-0.086,0.61"/>
+        <Label Content=" Tax " HorizontalAlignment="Left" Margin="570,186,0,0" VerticalAlignment="Top" Background="LightGoldenrodYellow" FontFamily="Arial" FontWeight="DemiBold" Width="48" Height="24"/>
+        <Label Content="  Sub Total  " HorizontalAlignment="Left" Margin="562,226,0,0" VerticalAlignment="Top" Background="LightGoldenrodYellow" FontFamily="Arial" FontWeight="DemiBold" Height="24" Width="90"/>
+        <Label Content="      Total  " HorizontalAlignment="Left" Margin="570,267,0,0" VerticalAlignment="Top" Background="LightGoldenrodYellow" FontFamily="Arial" FontWeight="DemiBold" Height="27" Width="82"/>
+        <Button Content="Clear Bill" HorizontalAlignment="Left" Margin="635,343,0,0" VerticalAlignment="Top" Height="37" Width="108" Background="LightCoral"  FontFamily="Arial" FontWeight="DemiBold" Click="Button_Click_2"/>
+        <Button Content="Check Out" HorizontalAlignment="Left" Margin="635,389,0,0" VerticalAlignment="Top" Height="42" Width="108" Background="LightCoral" FontFamily="Arial" FontWeight="DemiBold" Click="Button_Click_3"/>
+        <TextBox x:Name="Tax" HorizontalAlignment="Left" Margin="673,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Height="29" IsReadOnly="True" Background="LightGoldenrodYellow"/>
+        <TextBox  x:Name="subTotal" HorizontalAlignment="Left" Margin="673,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Height="28" IsReadOnly="True" Background="LightGoldenrodYellow"/>
+        <TextBox  x:Name="Total" HorizontalAlignment="Left" Margin="673,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="101" Height="27" IsReadOnly="True" Background="LightGoldenrodYellow"/>
+        <StatusBar Margin="0,454,622,0" Background="LightGoldenrodYellow">
+            <Label Content="    @  Aishwarya Pawar  " Width="170" FontFamily="Arial" FontWeight="DemiBold" Height="28"/>
+            <Image Height="100" Width="100"/>
+        </StatusBar>
+
+        <Button Content="Remove from Cart" HorizontalAlignment="Left" Margin="144,295,0,0" VerticalAlignment="Top" Height="53" Width="138" Background="LightCoral" FontFamily="Arial" FontWeight="DemiBold" Click="Button_Click_1" />
+        <Button Content="Update Payment" HorizontalAlignment="Left" Margin="429,398,0,0" VerticalAlignment="Top" Height="56" Width="116" Background="LightCoral" FontFamily="Arial" FontWeight="DemiBold" Click="UpdatePaymentsButton_Click"/>
+
+        <Label Content="  Menu  " HorizontalAlignment="Left" Margin="89,122,0,0" VerticalAlignment="Top" Background="LightGoldenrodYellow" FontFamily="Arial" FontWeight="Bold" Height="24" Width="56"/>
+        <Image  Source="C:\Users\Hp\Desktop\Centennial Academics\Semester 4\Programming 3\Programs\Lab-3_Question_No-1\Lab-3_Question_No-1\Logo.png" HorizontalAlignment="Left" Height="39" Margin="204,437,0,0" VerticalAlignment="Top" Width="74" MouseLeftButtonUp="Image_MouseLeftButtonUp"/>
+
+
+
+    </Grid>
+</Window>
